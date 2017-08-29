@@ -16,6 +16,7 @@ describe( "Dinosaur", function(){
     console.log( "Dinosaur offspring", dinosaur.offspringPerYear);
     assert.strictEqual(dinosaur.offspringPerYear, 3);
   })
+  
 
 
 
