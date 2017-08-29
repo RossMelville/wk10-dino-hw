@@ -40,8 +40,9 @@ describe( "Dinosaur", function(){
     park.addDinosaur(dinosaur1);
     park.addDinosaur(dinosaur2);
     park.addDinosaur(dinosaur3);
-    assert.strictEqual(park.offspringOver(2), [ Dinosaur { type: 'Tyrannosaurus', offspringPerYear: 3 },
-     Dinosaur { type: 'Triceratops', offspringPerYear: 5 } ])
+    var result = park.offspringOver(2);
+    console.log("Dinosaurs with 2+ offspring per year", result);
+    assert.strictEqual(result.length, 2);
   })
 
 

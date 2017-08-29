@@ -13,7 +13,15 @@ var Park = function(){
     }
   };
 
-  
+  Park.prototype.offspringOver = function(babies){
+    var foundDinosaurs = [];
+    for(i = 0; i < this.enclosure.length; i++){
+      if(this.enclosure[i].offspringPerYear >= babies){
+        foundDinosaurs.push(this.enclosure[i]);
+      }
+    }
+    return foundDinosaurs;
+  }
 }
 
 
