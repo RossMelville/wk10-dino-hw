@@ -45,5 +45,10 @@ describe( "Dinosaur", function(){
     assert.strictEqual(result.length, 2);
   })
 
+  it("should be able to get projected dinosaur count by year entered", function(){
+    park.addDinosaur(dinosaur1);
+    assert.strictEqual(park.projectedCount(1), 4);
+  })
+
 
 })
