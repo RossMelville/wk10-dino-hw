@@ -22,6 +22,15 @@ var Park = function(){
     }
     return foundDinosaurs;
   }
+
+  Park.prototype.projectedCount = function(years){
+    var dinosaurCount = this.enclosure.length;
+    for(i = 0; i < this.enclosure.length; i++){
+      dinosaurCount += (this.enclosure[i].offspringPerYear * years);
+    }
+    return dinosaurCount;
+  }
+
 }
 
 
