@@ -4,7 +4,7 @@ var Dinosaur = require("../dinosaur.js");
 describe( "Dinosaur", function(){
 
   beforeEach( function() {
-    dinosaur = new Dinosaur;
+    dinosaur = new Dinosaur("Tyrannosaurus", 3);
   })
 
   it( "should have type", function(){
