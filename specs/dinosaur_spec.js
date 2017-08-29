@@ -8,9 +8,14 @@ describe( "Dinosaur", function(){
   })
 
   it( "should have type", function(){
-    console.log( "Dinosaur", dinosaur);
+    console.log( "Dinosaur type", dinosaur.type);
     assert.strictEqual(dinosaur.type, "Tyrannosaurus");
   } );
+
+  it( "should have offspring per year", function(){
+    console.log( "Dinosaur offspring", dinosaur.offspringPerYear);
+    assert.strictEqual(dinosaur.offspringPerYear, 3);
+  })
 
 
 
