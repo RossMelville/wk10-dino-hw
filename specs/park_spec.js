@@ -36,6 +36,20 @@ describe( "Dinosaur", function(){
     assert.strictEqual(park.enclosure.length, 2);
   })
 
+  it("should be able to remove dinosaurs of type with more dinosaurs", function(){
+    dinosaur4 = new Dinosaur("Tyrannosaurus", 1);
+    dinosaur5 = new Dinosaur("Tyrannosaurus", 3);
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    park.addDinosaur(dinosaur4);
+    park.addDinosaur(dinosaur5);
+    console.log("Park before removing", park);
+    park.removeDinosaurType("Tyrannosaurus");
+    console.log("Park after removing", park);
+    assert.strictEqual(park.enclosure.length, 2);
+  })
+
   it("should be able to get all dinosaurs with offspring over given number", function(){
     park.addDinosaur(dinosaur1);
     park.addDinosaur(dinosaur2);
@@ -48,6 +62,13 @@ describe( "Dinosaur", function(){
   it("should be able to get projected dinosaur count by year entered", function(){
     park.addDinosaur(dinosaur1);
     assert.strictEqual(park.projectedCount(1), 4);
+  })
+
+  it("should be able to get projected dinosaur count by years entered with more dinosaurs", function(){
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    assert.strictEqual(park.projectedCount(2), 56);
   })
 
 

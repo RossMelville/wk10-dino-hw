@@ -5,12 +5,14 @@ var Park = function(){
     this.enclosure.push(dinosaur);
   };
 
-  Park.prototype.removeDinosaurType = function(type){
+  Park.prototype.removeDinosaurType = function(dinosaurType){
+    var notRemovedDinos = [];
     for(i = 0; i < this.enclosure.length; i++){
-      if (this.enclosure[i].type === type){
-        this.enclosure.splice(i, 1);
+      if(this.enclosure[i].type !== dinosaurType){
+        notRemovedDinos.push(this.enclosure[i]);
       }
     }
+    this.enclosure = notRemovedDinos;
   };
 
   Park.prototype.offspringOver = function(babies){
@@ -24,11 +26,12 @@ var Park = function(){
   }
 
   Park.prototype.projectedCount = function(years){
-    var dinosaurCount = this.enclosure.length;
+    var dinosaurCount = 0;
+    var indexDinoCount = 0;
     for(i = 0; i < this.enclosure.length; i++){
-      dinosaurCount += (this.enclosure[i].offspringPerYear * years);
+      indexDinoCount += Math.pow((this.enclosure[i].offspringPerYear + 1), years); 
     }
-    return dinosaurCount;
+    return indexDinoCount;
   }
 
 }
